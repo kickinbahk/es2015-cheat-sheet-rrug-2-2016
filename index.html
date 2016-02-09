@@ -57,32 +57,63 @@
                   ## ES2015 - Released June 2016
 				</section>
                 
-                <section data-markdown data-transition="zoom">
+                <section data-markdown>
                   ## Added New Syntax For "Complex" Applications
+				</section>
+
+                <section data-markdown data-transition="zoom">
+                  []()
 				</section>
                 
                 <section data-transition="zoom">
                   <h2>New Features</h2>
-                      <p class="fragment">Var vs Let/Const</p>
-                      <p class="fragment">IIFEs with Blocks</p>
-                      <p class="fragment">Arrow Functions</p>
-                      <p class="fragment">Strings</p>
-                      <p class="fragment">Destructuring</p>
-                      <p class="fragment">Modules</p>
-                      <p class="fragment">Parameters</p>                      
+                      <p class="fragment grow">Var vs Let/Const</p>
+                      <p class="fragment grow">IIFEs with Blocks</p>
+                      <p class="">Arrow Functions</p>
+                      <p class="fragment grow">Strings</p>
+                      <p class="">Destructuring</p>
+                      <p class="">Modules</p>
+                      <p class="">Parameters</p>                      
 				</section>
 
                 <section data-transition="zoom">
                   <h2>New Features cont.</h2>
-                      <p class="fragment">Classes</p>
-                      <p class="fragment">Symbols</p>
-                      <p class="fragment">Maps</p>
-                      <p class="fragment">WeakMaps</p>
-                      <p class="fragment">Promises</p>
-                      <p class="fragment">Generators</p>
-                      <p class="fragment">Async Await</p>                      
+                      <p class="">Classes</p>
+                      <p class="">Symbols</p>
+                      <p class="">Maps</p>
+                      <p class="">WeakMaps</p>
+                      <p class="fragment grow">Promises</p>
+                      <p class="fragment grow">Generators</p>
+                      <p class="fragment grow">Async Await</p>                      
 				</section>
-				<section data-markdown>
+
+                <section data-markdown>
+                  ## Var vs Let & Const
+                </section>
+                
+                <section data-markdown data-transition="convex">
+                  ### Let and Const
+
+                  ```
+                  function myFunc() {
+                    {
+                      let x;
+                      {
+                        // okay, block scoped name
+                        const x = "sneaky";
+                        // error, const
+                        x = "foo";
+                      }
+                      // okay, declared with `let`
+                      x = "bar";
+                      // error, already declared in block
+                      let x = "inner";
+                    }
+                  }
+                  ```
+				</section>
+                
+				<section data-markdown data-transition="slide">
                   ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
 				</section>
                 
