@@ -61,11 +61,11 @@
                   ## Added New Syntax For "Complex" Applications
 				</section>
 
-                <section data-markdown data-transition="zoom">
-                  []()
+                <section data-markdown>
+                  ### [github.com/DrkSephy/es6-cheatsheet/](https://github.com/DrkSephy/es6-cheatsheet/)
 				</section>
                 
-                <section data-transition="zoom">
+                <section data-transition="fade" data-transition-speed="slow">
                   <h2>New Features</h2>
                       <p class="fragment grow">Var vs Let/Const</p>
                       <p class="fragment grow">IIFEs with Blocks</p>
@@ -73,10 +73,10 @@
                       <p class="fragment grow">Strings</p>
                       <p class="">Destructuring</p>
                       <p class="">Modules</p>
-                      <p class="">Parameters</p>                      
+                      <p class="fragment grow">Parameters</p>                      
 				</section>
 
-                <section data-transition="zoom">
+                <section data-transition="fade" data-transition-speed="slow">
                   <h2>New Features cont.</h2>
                       <p class="">Classes</p>
                       <p class="">Symbols</p>
@@ -87,11 +87,40 @@
                       <p class="fragment grow">Async Await</p>                      
 				</section>
 
+                <section data-transition="zoom" data-transition-speed="slow">
+                  <h2>New Features cont.</h2>
+                      <span class="fragment">
+                        <p class="">Var vs Let/Const</p>
+                        <p class="">IIFEs</p>
+                        <p class="">Parameters</p>
+                        <p class="">Strings</p>
+                      </span>
+                      <p class="">Promises</p>
+                      <p class="">Generators</p>
+                      <p class="">Async Await</p>                      
+				</section>
+                
                 <section data-markdown>
                   ## Var vs Let & Const
                 </section>
+
+                <section data-markdown>
+                  ## Var is Scoped to the Function 
+                </section>
                 
-                <section data-markdown data-transition="convex">
+                <section data-markdown>
+                  ```
+                  function f() {
+                    for (var i = 2; i < 10; i+=1) {
+                      console.log("i = " + i);
+                    }
+                    console.log(i);
+                  }
+                  f();
+                  ```
+                </section>
+                
+                <section data-markdown data-transition="concave">
                   ### Let and Const
 
                   ```
