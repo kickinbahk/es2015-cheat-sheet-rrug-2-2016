@@ -76,18 +76,20 @@
                       <p class="fragment grow">Parameters</p>                      
 				</section>
 
-                <section data-transition="fade" data-transition-speed="slow">
+                <section data-transition="none" data-transition-speed="slow">
                   <h2>New Features cont.</h2>
-                      <p class="">Classes</p>
-                      <p class="">Symbols</p>
-                      <p class="">Maps</p>
-                      <p class="">WeakMaps</p>
-                      <p class="fragment grow">Promises</p>
-                      <p class="fragment grow">Generators</p>
-                      <p class="fragment grow">Async Await</p>                      
+                      <span class="fragment fade-out" data-fragment-index="4">
+                        <p class="">Classes</p>
+                        <p class="">Symbols</p>
+                        <p class="">Maps</p>
+                        <p class="">WeakMaps</p>
+                      </span>
+                      <p class="fragment grow" data-fragment-index="1">Promises</p>
+                      <p class="fragment grow" data-fragment-index="2">Generators</p>
+                      <p class="fragment grow" data-fragment-index="3">Async Await</p>                      
 				</section>
 
-                <section data-transition="zoom" data-transition-speed="slow">
+                <section data-transition="none">
                   <h2>New Features cont.</h2>
                       <span class="fragment">
                         <p class="">Var vs Let/Const</p>
@@ -116,8 +118,30 @@
                     }
                     console.log(i);
                   }
-                  f();
+                  f(); 
                   ```
+                </section>
+
+                <section data-markdown>
+                  ## Let and Const are Scoped to the Block
+                </section>
+
+                <section data-markdown>
+                  ## Const is a Constant Reference to a Value
+                </section>
+                
+                <section data-markdown>
+                  ## Immutable when Referencing a Primitive
+                  ### (String, Num, Bool) 
+                </section>
+                
+                <section data-markdown>
+                  ## Not Immutable Referencing an Object
+                  ### (Arrays and Objects)
+                </section>
+
+                <section data-markdown>
+                  ## Less Strict Immutability
                 </section>
                 
                 <section data-markdown data-transition="concave">
@@ -141,6 +165,22 @@
                   }
                   ```
 				</section>
+
+                <section data-markdown>
+                  ## Using ES2015 in Your Rails App
+                </section>
+                
+                <section data-markdown>
+                  ## 2 gems are Necessary
+                </section>
+                
+                <section>
+                  <pre><code class="ruby">
+                    gem "sprockets"
+
+                    gem "sprockets-es6"
+                  </code></pre>
+                </section>                
                 
 				<section data-markdown data-transition="slide">
                   ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
