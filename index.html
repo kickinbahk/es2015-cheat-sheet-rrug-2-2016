@@ -86,7 +86,7 @@
                       </span>
                       <p class="fragment grow" data-fragment-index="1">Promises</p>
                       <p class="fragment grow" data-fragment-index="2">Generators</p>
-                      <p class="fragment grow" data-fragment-index="3">Async Await</p>                      
+                      <p class="fragment" data-fragment-index="3">Async Await</p>                      
 				</section>
 
                 <section data-transition="none">
@@ -94,6 +94,7 @@
                       <span class="fragment">
                         <p class="">Var vs Let/Const</p>
                         <p class="">IIFEs</p>
+                        <p class="">Arrow Functions</p>                        
                         <p class="">Parameters</p>
                         <p class="">Strings</p>
                       </span>
@@ -172,9 +173,60 @@
                 <section data-markdown>
                   ## From Coffeescript (Fat Arrow)
                 </section>
-                
+
+                <section>
+                  <h3> Shorter Code...</h3>
+                  
+                  <pre><code class="javascript">
+                    function foo(x,y) {
+                        return x + y;
+                    }
+
+                    // versus
+
+                    var foo = (x,y) => x + y;
+                  </code></pre>
+                </section>
+
                 <section data-markdown>
-                  ## Using ES2015 in Your Rails App
+                  ## More importantly is impact of `this`
+                </section>
+                
+                <section >
+                  <h3>This bindings are dynamic so we use the predictability of lexical scope via the self variable.</h3>
+                  
+                  <pre><code class="javascript" data-trim data-noescape>
+                    var controller = {
+                      makeRequest: function(..){
+                        var self = this;
+                        btn.addEventListener( "click", function(){
+                          // ..
+                          self.makeRequest(..);
+                        }, false );
+                      }
+                    };
+                  </code></pre>
+                </section>                
+
+                <section>
+                  <h3>Inside arrow functions, the this binding is not dynamic, but is instead lexical</h3>
+                  
+                  <pre><code class="javascript" data-trim data-noescape>
+                    var controller = {
+                        makeRequest: function(..){
+                            btn.addEventListener( "click", () => {
+                                // ..
+                                this.makeRequest(..);
+                            }, false );
+                        }
+                    };
+                  </code></pre>
+                </section>        
+                
+                <section>
+                  <a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><img src="./assets/javascript-is-sexy.png" /></a>
+                  <br>
+                  <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
                 </section>
                 
                 <section data-markdown>
@@ -208,7 +260,7 @@
 			Reveal.initialize({
 				controls: true,
 				progress: true,
-				history: false,
+				history: true,
 				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
