@@ -68,7 +68,7 @@
                 <section data-transition="fade" data-transition-speed="slow">
                   <h2>New Features</h2>
                       <p class="fragment grow">Var vs Let/Const</p>
-                      <p class="fragment grow">IIFEs with Blocks</p>
+                      <p class="fragment grow">Replacing IIFEs with Blocks</p>
                       <p class="fragment grow">Arrow Functions</p>
                       <p class="fragment grow">Strings</p>
                       <p class="">Destructuring</p>
@@ -93,7 +93,7 @@
                   <h2>New Features cont.</h2>
                       <span class="fragment">
                         <p class="">Var vs Let/Const</p>
-                        <p class="">IIFEs</p>
+                        <p class="">Replacing IIFEs with Blocks</p>
                         <p class="">Arrow Functions</p>                        
                         <p class="">Parameters</p>
                         <p class="">Strings</p>
@@ -163,9 +163,38 @@
                       let x = "inner";
                     }
                   }
-                  ```
+                  ```  
 				</section>
 
+                <section data-markdown>
+                  ## Replacing IIFEs with Blocks
+                </section>
+
+                <section data-markdown>
+                  ## Immediately Invoked Function Expression
+                </section>
+
+                <section data-markdown>
+                  ## Allows for scoping (To not pollute the global space)
+                </section>
+                
+                <section>
+                  <pre><code class="javascript">
+                    (function () {
+                        var food = 'Meow Mix';
+                    }());
+
+                    console.log(food); // Reference Error
+                    Using ES6 Blocks:
+
+                    {
+                        let food = 'Meow Mix';
+                    }
+
+                    console.log(food); // Reference Error
+                  </code></pre>
+                </section>                                
+                
                 <section data-markdown>
                   ## Arrow Functions
                 </section>               
@@ -228,7 +257,137 @@
                   <br>
                   <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
                 </section>
-                
+
+                <section>
+                  <section data-markdown>
+                    ## Strings
+                  </section>
+
+                  <section data-markdown>
+                    ## Adds New Methods to the Library
+                  </section>
+                  <section data-markdown>
+                    ## .includes()
+                  </section>
+
+                  <section data-markdown>
+                    ### Es5 
+
+                    ```
+                    var string = 'food';
+                    var substring = 'foo';
+
+                    console.log(string.indexOf(substring) > -1);
+                    ```
+
+                    ### Es6
+
+                    ```
+                    const string = 'food';
+                    const substring = 'foo';
+
+                    console.log(string.includes(substring)); // true
+                    ```
+                  </section>
+
+                  <section data-markdown>
+                    ## .repeat()
+                  </section>
+
+                  <section data-markdown>
+                    ### Es5
+                    ```
+                    function repeat(string, count) {
+                      var strings = [];
+                      while(strings.length < count) {
+                        strings.push(string);
+                      }
+                      return strings.join('');
+                    }
+                    ```
+
+                    ### Es6
+
+                    ```
+                    // String.repeat(numberOfRepetitions)
+                    'meow'.repeat(3); // 'meowmeowmeow'
+                    ```
+                  </section>
+
+                  <section data-markdown>
+                    ## Template Literals               
+                  </section>
+
+                  <section data-markdown>
+                    ## Allows special characters w/o Escaping
+                  </section>
+
+                  <section data-markdown>
+                    ### Es5
+
+                    ```
+                    var text = "This string contains \"double quotes\" which are escaped.";
+                    ```
+
+                    ### Es6
+
+                    ```
+                    var text = `This string contains "double quotes" which are escaped.`;
+                    ```
+                  </section>
+
+                  <section data-markdown>
+                    ## String Interpolation
+                  </section>
+
+                  <section data-markdown>
+                    ### Es5
+
+                    ```
+                    var name = 'Tiger';
+                    var age = 13;
+
+                    console.log('My cat is named ' + name
+                               + ' and is ' + age + ' years old.');
+                    ```
+
+                    ### Es6
+
+                    ```
+                    const name = 'Tiger';
+                    const age = 13;
+
+                    console.log(`My cat is named ${name} and is ${age} years old.`);
+                    ```
+                  </section>
+                <section data-markdown>
+                  ## New Line Preservation
+                </section>
+                <section data-markdown>
+                  ### Es5
+                  
+                  ```
+                  var text = (
+                    'cat\n' +
+                    'dog\n' +
+                    'nickelodeon'
+                  );
+                  ```
+
+                  ### Es6
+                  
+                  ```
+                  let text = ( `cat
+                  dog
+                  nickelodeon`
+                  );
+                  ```
+                </section>                
+                  
+                </section>
+                <section data-markdown>
+                  ## Adding ES 2015 to Your Rails App
+                </section>
                 <section data-markdown>
                   ## 2 gems are Necessary
                 </section>
