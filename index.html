@@ -102,163 +102,174 @@
                       <p class="">Generators</p>
 				</section>
                 
-                <section data-markdown>
-                  ## Var vs Let & Const
-                </section>
+                <section>
+                  <section data-markdown data-transition="fade">
+                    ## Var vs Let & Const
+                  </section>
 
-                <section data-markdown>
-                  ## Var is Scoped to the Function 
-                </section>
-                
-                <section data-markdown>
-                  ```
-                  function f() {
-                    for (var i = 2; i < 10; i+=1) {
-                      console.log("i = " + i);
+                  <section data-markdown data-transition="fade">
+                    ## Var is Scoped to the Function 
+                  </section>
+
+                  <section data-markdown data-transition="convex">
+                    ```
+                    function f() {
+                      for (var i = 2; i < 10; i+=1) {
+                        console.log("i = " + i);
+                      }
+                      console.log(i);
                     }
-                    console.log(i);
-                  }
-                  f(); 
-                  ```
-                </section>
+                    f(); 
+                    ```
+                  </section>
 
-                <section data-markdown>
-                  ## Let and Const are Scoped to the Block
-                </section>
+                  <section data-markdown data-transition="fade">
+                    ## Let and Const are Scoped to the Block
+                  </section>
 
-                <section data-markdown>
-                  ## Const is a Constant Reference to a Value
-                </section>
-                
-                <section data-markdown>
-                  ## Immutable when Referencing a Primitive
-                  ### (String, Num, Bool) 
-                </section>
-                
-                <section data-markdown>
-                  ## Not Immutable Referencing an Object
-                  ### (Arrays and Objects)
-                </section>
+                  <section data-markdown data-transition="fade">
+                    ## Const is a Constant Reference to a Value
+                  </section>
 
-                <section data-markdown>
-                  ## Less Strict Immutability
-                </section>
-                
-                <section data-markdown data-transition="concave">
-                  ### Let and Const
+                  <section data-markdown data-transition="fade">
+                    ## Immutable when Referencing a Primitive
+                    ### (String, Num, Bool) 
+                  </section>
 
-                  ```
-                  function myFunc() {
-                    {
-                      let x;
+                  <section data-markdown data-transition="fade">
+                    ## Not Immutable Referencing an Object                    
+                    ### (Arrays and Objects)
+                  </section>
+
+                  <section data-markdown data-transition="fade">
+                    ## Less Strict Immutability
+                  </section>
+
+                  <section data-markdown data-transition="concave">
+                    ### Let and Const
+
+                    ```
+                    function myFunc() {
                       {
-                        // okay, block scoped name
-                        const x = "sneaky";
-                        // error, const
-                        x = "foo";
-                      }
-                      // okay, declared with `let`
-                      x = "bar";
-                      // error, already declared in block
-                      let x = "inner";
-                    }
-                  }
-                  ```  
-				</section>
-
-                <section data-markdown>
-                  ## Replacing IIFEs with Blocks
-                </section>
-
-                <section data-markdown>
-                  ## Immediately Invoked Function Expression
-                </section>
-
-                <section data-markdown>
-                  ## Allows for scoping (To not pollute the global space)
-                </section>
-                
-                <section>
-                  <pre><code class="javascript">
-                    (function () {
-                        var food = 'Meow Mix';
-                    }());
-
-                    console.log(food); // Reference Error
-                    Using ES6 Blocks:
-
-                    {
-                        let food = 'Meow Mix';
-                    }
-
-                    console.log(food); // Reference Error
-                  </code></pre>
-                </section>                                
-                
-                <section data-markdown>
-                  ## Arrow Functions
-                </section>               
-                
-                <section data-markdown>
-                  ## From Coffeescript (Fat Arrow)
-                </section>
-
-                <section>
-                  <h3> Shorter Code...</h3>
-                  
-                  <pre><code class="javascript">
-                    function foo(x,y) {
-                        return x + y;
-                    }
-
-                    // versus
-
-                    var foo = (x,y) => x + y;
-                  </code></pre>
-                </section>
-
-                <section data-markdown>
-                  ## More importantly is impact of `this`
-                </section>
-                
-                <section >
-                  <h3>This bindings are dynamic so we use the predictability of lexical scope via the self variable.</h3>
-                  
-                  <pre><code class="javascript" data-trim data-noescape>
-                    var controller = {
-                      makeRequest: function(..){
-                        var self = this;
-                        btn.addEventListener( "click", function(){
-                          // ..
-                          self.makeRequest(..);
-                        }, false );
-                      }
-                    };
-                  </code></pre>
-                </section>                
-
-                <section>
-                  <h3>Inside arrow functions, the this binding is not dynamic, but is instead lexical</h3>
-                  
-                  <pre><code class="javascript" data-trim data-noescape>
-                    var controller = {
-                        makeRequest: function(..){
-                            btn.addEventListener( "click", () => {
-                                // ..
-                                this.makeRequest(..);
-                            }, false );
+                        let x;
+                        {
+                          // okay, block scoped name
+                          const x = "sneaky";
+                          // error, const
+                          x = "foo";
                         }
-                    };
-                  </code></pre>
-                </section>        
-                
-                <section>
-                  <a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><img src="./assets/javascript-is-sexy.png" /></a>
-                  <br>
-                  <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
+                        // okay, declared with `let`
+                        x = "bar";
+                        // error, already declared in block
+                        let x = "inner";
+                      }
+                    }
+                    ```  
+                  </section>
                 </section>
 
+                <!-- Replacing IIFEs With Blocks --> 
                 <section>
+                  <section data-markdown data-transition="fade">
+                    ## Replacing IIFEs with Blocks
+                  </section>
+
+                  <section data-markdown data-transition="fade">
+                    ## Immediately Invoked Function Expression
+                  </section>
+
+                  <section data-markdown data-transition="fade">
+                    ## Allows for scoping
+                    ### (To not pollute the global space)
+                  </section>
+
+                  <section data-transition="convex">
+                    <h4>Es5 IIFE:</h4>
+                    <pre><code class="javascript">
+                      (function () {
+                          var food = 'Meow Mix';
+                      }());
+
+                      console.log(food); // Reference Error
+                    </code></pre>
+                    <h4>ES6 Blocks:</h4>
+                    <pre><code class="javascript">                    
+                      {
+                          let food = 'Meow Mix';
+                      }
+
+                      console.log(food); // Reference Error
+                    </code></pre>
+                  </section>
+                </section>
+
+                <!-- Arrow Functions  -->
+                <section>
+                  <section data-markdown data-transition="fade">
+                    ## Arrow Functions
+                  </section>               
+
+                  <section data-markdown data-transition="fade">
+                    ## From Coffeescript (Fat Arrow)
+                  </section>
+
+                  <section data-transition="fade">
+                    <h3> Shorter Code...</h3>
+
+                    <pre><code class="javascript">
+                      function foo(x,y) {
+                          return x + y;
+                      }
+
+                      // versus
+
+                      var foo = (x,y) => x + y;
+                    </code></pre>
+                  </section>
+
+                  <section data-markdown data-transition="fade">
+                    ## More importantly is impact of `this`
+                  </section>
+
+                  <section data-transition="fade">
+                    <h3>This bindings are dynamic so we use the predictability of lexical scope via the self variable.</h3>
+
+                    <pre><code class="javascript" data-trim data-noescape>
+                      var controller = {
+                        makeRequest: function(..){
+                          var self = this;
+                          btn.addEventListener( "click", function(){
+                            // ..
+                            self.makeRequest(..);
+                          }, false );
+                        }
+                      };
+                    </code></pre>
+                  </section>                
+
+                  <section>
+                    <h3>Inside arrow functions, the this binding is not dynamic, but is instead lexical</h3>
+
+                    <pre><code class="javascript" data-trim data-noescape>
+                      var controller = {
+                          makeRequest: function(..){
+                              btn.addEventListener( "click", () => {
+                                  // ..
+                                  this.makeRequest(..);
+                              }, false );
+                          }
+                      };
+                    </code></pre>
+                  </section>        
+
+                  <section>
+                    <a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><img src="./assets/javascript-is-sexy.png" /></a>
+                    <br>
+                    <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
+                  </section>
+                </section>
+                
+                <section>                 
                   <section data-markdown>
                     ## Strings
                   </section>
@@ -385,25 +396,26 @@
                 </section>                
                   
                 </section>
-                <section data-markdown>
-                  ## Adding ES 2015 to Your Rails App
-                </section>
-                <section data-markdown>
-                  ## 2 gems are Necessary
-                </section>
-                
-                <section>
-                  <pre><code class="ruby">
-                    gem "sprockets"
 
-                    gem "sprockets-es6"
-                  </code></pre>
-                </section>                
-                
+                <section>
+                  <section data-markdown>
+                    ## Adding ES 2015 to Your Rails App
+                  </section>
+                  <section data-markdown>
+                    ## 2 gems are Necessary
+                  </section>
+
+                  <section>
+                    <pre><code class="ruby">
+                      #Gemfile
+                      gem "sprockets"
+                      gem "sprockets-es6"
+                    </code></pre>
+                  </section>                
+                </section>
 				<section data-markdown data-transition="slide">
                   ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
 				</section>
-                
 
 			</div>
 
