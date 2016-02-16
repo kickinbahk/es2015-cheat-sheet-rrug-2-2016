@@ -101,10 +101,13 @@
                       <p class="">Promises</p>
                       <p class="">Generators</p>
 				</section>
-                
+
+                <!-- Var vs Let & Const -->
                 <section>
                   <section data-markdown data-transition="fade">
-                    ## Var vs Let & Const
+                    # Var
+                    ## vs.
+                    # Let & Const
                   </section>
 
                   <section data-markdown data-transition="fade">
@@ -171,7 +174,9 @@
                 <!-- Replacing IIFEs With Blocks --> 
                 <section>
                   <section data-markdown data-transition="fade">
-                    ## Replacing IIFEs with Blocks
+                    # Replacing IIFEs
+                    ## with
+                    # Blocks
                   </section>
 
                   <section data-markdown data-transition="fade">
@@ -268,7 +273,8 @@
                     <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
                   </section>
                 </section>
-                
+
+                <!-- Strings  --> 
                 <section>                 
                   <section data-markdown data-transition="fade">
                     ## Strings
@@ -372,6 +378,7 @@
                     console.log(`My cat is named ${name} and is ${age} years old.`);
                     ```
                   </section>
+                  
                   <section data-markdown data-transition="fade">
                     ## New Line Preservation
                   </section>
@@ -398,10 +405,12 @@
                   </section>                  
                 </section>
 
+                <!-- Adding Es2015 to your Rails app --> 
                 <section>
                   <section data-markdown data-transition="fade">
-                    ## Adding ES 2015 to Your Rails App
+                    ## Adding ES2015 to Your Rails App
                   </section>
+                  
                   <section data-markdown data-transition="fade">
                     ## 2 gems are Necessary
                   </section>
@@ -412,8 +421,30 @@
                       gem "sprockets"
                       gem "sprockets-es6"
                     </code></pre>
-                  </section>                
+                  </section>
+
+                  <section data-markdown data-transition="convex">
+                    #### Add to top of `application.js`                    
+                    ```
+                    require 'sprockets/es6'
+                    ```
+                  </section>
+
+                  <section data-markdown data-transition="fade">
+                    ### Install Presets
+                    ```
+                    npm install babel-preset-es2015 --save-dev
+                    ```
+                  </section>
+                  <section data-markdown data-transition="fade">
+                    ### Create `.babelrc` config and enable Plugin(s)
+                    ```
+                    echo '{ "presets": ["es2015"] }' > .babelrc
+                    ```
+                  </section>
+                  
                 </section>
+                
 				<section data-markdown data-transition="slide">
                   ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
 				</section>
