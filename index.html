@@ -41,117 +41,113 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-markdown>
-                  <script>
-                    # ES2015 Features
+			  <section>
+                <h1>ES2015 Features</h1>
+                <h2>And Your Rails App<h2>
+                  <p>
+                    <small><a href="http://kickinbahk.com">Josiah Mory</a> / <a href="http://twitter.com/kickinbahk">@kickinbahk</a></small>
+                  </p>
+			  </section>
 
-                    ## And Your Rails App
+			  <section data-markdown>
+                ## ES2015 - Released June 2016
+			  </section>
+              
+              <section data-markdown>
+                ## Added New Syntax For "Complex" Applications
+			  </section>
+              
+              <section data-markdown>
+                ### [github.com/DrkSephy/es6-cheatsheet/](https://github.com/DrkSephy/es6-cheatsheet/)
+			  </section>
+              
+              <section data-transition="fade" data-transition-speed="slow">
+                <h2>New Features</h2>
+                <p class="fragment grow">Var vs Let/Const</p>
+                <p class="fragment grow">Replacing IIFEs with Blocks</p>
+                <p class="fragment grow">Arrow Functions</p>
+                <p class="fragment grow">Strings</p>
+                <p class="">Destructuring</p>
+                <p class="">Modules</p>
+                <p class="fragment grow">Parameters</p>                      
+			  </section>
 
-                    <p>
-						<small><a href="http://kickinbahk.com">Josiah Mory</a> / <a href="http://twitter.com/kickinbahk">@kickinbahk</a></small>
-					</p>
-                  </script>
-				</section>
+              <section data-transition="none" data-transition-speed="slow">
+                <h2>New Features cont.</h2>
+                <span class="fragment fade-out" data-fragment-index="4">
+                  <p class="">Classes</p>
+                  <p class="">Symbols</p>
+                  <p class="">Maps</p>
+                  <p class="">WeakMaps</p>
+                </span>
+                <p class="fragment grow" data-fragment-index="1">Promises</p>
+                <p class="fragment grow" data-fragment-index="2">Generators</p>
+                <p class="fragment" data-fragment-index="3">Async Await</p>                      
+			  </section>
 
-				<section data-markdown>
-                  ## ES2015 - Released June 2016
-				</section>
+              <section data-transition="none">
+                <h2>New Features cont.</h2>
+                <span class="fragment">
+                  <p class="">Var vs Let/Const</p>
+                  <p class="">Replacing IIFEs with Blocks</p>
+                  <p class="">Arrow Functions</p>                        
+                  <p class="">Parameters</p>
+                  <p class="">Strings</p>
+                </span>
+                <p class="">Promises</p>
+                <p class="">Generators</p>
+			  </section>
+              
+              <!-- Var vs Let & Const -->
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Var
+                  ## vs.
+                  # Let & Const
+                </section>
                 
-                <section data-markdown>
-                  ## Added New Syntax For "Complex" Applications
-				</section>
-
-                <section data-markdown>
-                  ### [github.com/DrkSephy/es6-cheatsheet/](https://github.com/DrkSephy/es6-cheatsheet/)
-				</section>
+                <section data-markdown data-transition="fade">
+                  ## Var is Scoped to the Function 
+                </section>
                 
-                <section data-transition="fade" data-transition-speed="slow">
-                  <h2>New Features</h2>
-                      <p class="fragment grow">Var vs Let/Const</p>
-                      <p class="fragment grow">Replacing IIFEs with Blocks</p>
-                      <p class="fragment grow">Arrow Functions</p>
-                      <p class="fragment grow">Strings</p>
-                      <p class="">Destructuring</p>
-                      <p class="">Modules</p>
-                      <p class="fragment grow">Parameters</p>                      
-				</section>
-
-                <section data-transition="none" data-transition-speed="slow">
-                  <h2>New Features cont.</h2>
-                      <span class="fragment fade-out" data-fragment-index="4">
-                        <p class="">Classes</p>
-                        <p class="">Symbols</p>
-                        <p class="">Maps</p>
-                        <p class="">WeakMaps</p>
-                      </span>
-                      <p class="fragment grow" data-fragment-index="1">Promises</p>
-                      <p class="fragment grow" data-fragment-index="2">Generators</p>
-                      <p class="fragment" data-fragment-index="3">Async Await</p>                      
-				</section>
-
-                <section data-transition="none">
-                  <h2>New Features cont.</h2>
-                      <span class="fragment">
-                        <p class="">Var vs Let/Const</p>
-                        <p class="">Replacing IIFEs with Blocks</p>
-                        <p class="">Arrow Functions</p>                        
-                        <p class="">Parameters</p>
-                        <p class="">Strings</p>
-                      </span>
-                      <p class="">Promises</p>
-                      <p class="">Generators</p>
-				</section>
-
-                <!-- Var vs Let & Const -->
-                <section>
-                  <section data-markdown data-transition="fade">
-                    # Var
-                    ## vs.
-                    # Let & Const
-                  </section>
-
-                  <section data-markdown data-transition="fade">
-                    ## Var is Scoped to the Function 
-                  </section>
-
-                  <section data-markdown data-transition="convex">
-                    ```
-                    function f() {
-                      for (var i = 2; i < 10; i+=1) {
-                        console.log("i = " + i);
-                      }
-                      console.log(i);
+                <section data-markdown data-transition="convex">
+                  ```
+                  function f() {
+                    for (var i = 2; i < 10; i+=1) {
+                      console.log("i = " + i);
                     }
-                    f(); 
-                    ```
-                  </section>
+                    console.log(i);
+                  }
+                  f(); 
+                  ```
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Let and Const are Scoped to the Block
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Let and Const are Scoped to the Block
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Const is a Constant Reference to a Value
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Const is a Constant Reference to a Value
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Immutable when Referencing a Primitive
-                    ### (String, Num, Bool) 
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Immutable when Referencing a Primitive
+                  ### (String, Num, Bool) 
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Not Immutable Referencing an Object                    
-                    ### (Arrays and Objects)
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Not Immutable Referencing an Object                    
+                  ### (Arrays and Objects)
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Less Strict Immutability
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Less Strict Immutability
+                </section>
 
-                  <section data-markdown data-transition="concave">
-                    ### Let and Const
+                <section data-markdown data-transition="concave">
+                  ### Let and Const
 
-                    ```
+                  ```
                     function myFunc() {
                       {
                         let x;
@@ -167,238 +163,238 @@
                         let x = "inner";
                       }
                     }
-                    ```  
-                  </section>
+                  ```  
+                </section>
+              </section>
+
+              <!-- Replacing IIFEs With Blocks --> 
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Replacing IIFEs
+                  ## with
+                  # Blocks
                 </section>
 
-                <!-- Replacing IIFEs With Blocks --> 
-                <section>
-                  <section data-markdown data-transition="fade">
-                    # Replacing IIFEs
-                    ## with
-                    # Blocks
-                  </section>
-
-                  <section data-markdown data-transition="fade">
-                    ## Immediately Invoked Function Expression
-                  </section>
-
-                  <section data-markdown data-transition="fade">
-                    ## Allows for scoping
-                    ### (To not pollute the global space)
-                  </section>
-
-                  <section data-transition="convex">
-                    <h4>Es5 IIFE:</h4>
-                    <pre><code class="javascript">
-                      (function () {
-                          var food = 'Meow Mix';
-                      }());
-
-                      console.log(food); // Reference Error
-                    </code></pre>
-                    <h4>ES6 Blocks:</h4>
-                    <pre><code class="javascript">                    
-                      {
-                          let food = 'Meow Mix';
-                      }
-
-                      console.log(food); // Reference Error
-                    </code></pre>
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Immediately Invoked Function Expression
                 </section>
 
-                <!-- Arrow Functions  -->
-                <section>
-                  <section data-markdown data-transition="fade">
-                    # Arrow Functions
-                  </section>               
+                <section data-markdown data-transition="fade">
+                  ## Allows for scoping
+                  ### (To not pollute the global space)
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## From Coffeescript (Fat Arrow)
-                  </section>
+                <section data-transition="convex">
+                  <h4>Es5 IIFE:</h4>
+                  <pre><code class="javascript">
+                    (function () {
+                        var food = 'Meow Mix';
+                    }());
 
-                  <section data-transition="fade">
-                    <h3> Shorter Code...</h3>
+                    console.log(food); // Reference Error
+                  </code></pre>
+                  <h4>ES6 Blocks:</h4>
+                  <pre><code class="javascript">                    
+                    {
+                      let food = 'Meow Mix';
+                    }
 
-                    <pre><code class="javascript">
-                      function foo(x,y) {
-                          return x + y;
+                    console.log(food); // Reference Error
+                  </code></pre>
+                </section>
+              </section>
+
+              <!-- Arrow Functions  -->
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Arrow Functions
+                </section>               
+
+                <section data-markdown data-transition="fade">
+                  ## From Coffeescript (Fat Arrow)
+                </section>
+
+                <section data-transition="fade">
+                  <h3> Shorter Code...</h3>
+
+                  <pre><code class="javascript">
+                    function foo(x,y) {
+                        return x + y;
+                    }
+
+                    // versus
+
+                    var foo = (x,y) => x + y;
+                  </code></pre>
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## More importantly is impact of `this`
+                </section>
+
+                <section data-transition="fade">
+                  <h3><code>this</code> bindings are dynamic so we use the predictability of lexical scope via the self variable.</h3>
+
+                  <pre><code class="javascript" data-trim data-noescape>
+                    var controller = {
+                      makeRequest: function(..){
+                        var self = this;
+                        btn.addEventListener( "click", function(){
+                          // ..
+                          self.makeRequest(..);
+                        }, false );
                       }
+                    };
+                  </code></pre>
+                </section>                
 
-                      // versus
+                <section data-transition="fade">
+                  <h3>Inside arrow functions, the <code>this</code> binding is not dynamic, but is instead lexical</h3>
 
-                      var foo = (x,y) => x + y;
-                    </code></pre>
-                  </section>
-
-                  <section data-markdown data-transition="fade">
-                    ## More importantly is impact of `this`
-                  </section>
-
-                  <section data-transition="fade">
-                    <h3>This bindings are dynamic so we use the predictability of lexical scope via the self variable.</h3>
-
-                    <pre><code class="javascript" data-trim data-noescape>
-                      var controller = {
+                  <pre><code class="javascript" data-trim data-noescape>
+                    var controller = {
                         makeRequest: function(..){
-                          var self = this;
-                          btn.addEventListener( "click", function(){
-                            // ..
-                            self.makeRequest(..);
-                          }, false );
+                            btn.addEventListener( "click", () => {
+                                // ..
+                                this.makeRequest(..);
+                            }, false );
                         }
-                      };
-                    </code></pre>
-                  </section>                
+                    };
+                  </code></pre>
+                </section>        
 
-                  <section data-transition="fade">
-                    <h3>Inside arrow functions, the this binding is not dynamic, but is instead lexical</h3>
+                <section data-transition="fade">
+                  <a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><img src="./assets/javascript-is-sexy.png" /></a>
+                  <br>
+                  <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
+                </section>
+              </section>
 
-                    <pre><code class="javascript" data-trim data-noescape>
-                      var controller = {
-                          makeRequest: function(..){
-                              btn.addEventListener( "click", () => {
-                                  // ..
-                                  this.makeRequest(..);
-                              }, false );
-                          }
-                      };
-                    </code></pre>
-                  </section>        
-
-                  <section data-transition="fade">
-                    <a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><img src="./assets/javascript-is-sexy.png" /></a>
-                    <br>
-                    <a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond"><img src="./assets/es6-and-beyond.jpg"  /></a>
-                  </section>
+              <!-- Parameters -->
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Parameters
                 </section>
 
-                <!-- Parameters -->
-                <section>
-                  <section data-markdown data-transition="fade">
-                    # Parameters
-                  </section>
-
-                  <section data-markdown data-transition="fade">
-                    ## Default Parameters
-                  </section>
-                  
-                  <section data-markdown data-transition="convex">
-                    ### Es5
+                <section data-markdown data-transition="fade">
+                  ## Default Parameters
+                </section>
+                
+                <section data-markdown data-transition="convex">
+                  ### Es5
                     
-                    ```
+                  ```
                     function addTwoNumbers(x, y) {
                       x = x || 0;
                       y = y || 0;
                       return x + y;
                     }
-                    ```
-                    ### Es6
+                  ```
+                  ### Es6
                     
-                    ```
+                  ```
                     function addTwoNumbers(x=0, y=0) {
                       return x + y;
                     }
-                    ```
-                  </section>
+                  ```
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Rest Parameter
-                    ### (Indefinite Amount of Args)
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Rest Parameter
+                  ### (Indefinite Amount of Args)
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Rest Operator (...)
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Rest Operator (...)
+                </section>
 
-                  <section data-markdown data-transition="convex">
-                    ### Es5
+                <section data-markdown data-transition="convex">
+                  ### Es5
 
-                    ```
+                  ```
                     function logArguments() {
                       for (var i=0; i < arguments.length; i++) {
                         console.log(arguments[i]);
                       }
                     }
-                    ```
+                  ```
+                  
+                  ### Es6
 
-                    ### Es6
-
-                    ```
-                    function logArguments(...args) {
-                      for (let arg of args) {
-                        console.log(arg);
-                      }
-                    }
-                    ```
-                  </section>
-
-                  <section data-markdown data-transition="convex">
-                    ### for loop
-
-                    ```
+                  ```
                     function logArguments(...args) {
                       for (var i=0; i < args.length; i++) {
                         console.log(args[i]);
                       }
                     }
-                    ```
+                  ```
+                </section>
 
-                    ### for...of (Es6)
+                <section data-markdown data-transition="convex">
+                  ### for loop
 
-                    ```
+                  ```
+                    function logArguments(...args) {
+                      for (var i=0; i < args.length; i++) {
+                        console.log(args[i]);
+                      }
+                    }
+                  ```
+
+                  ### for...of (Es6)
+
+                  ```
                     function logArguments(...args) {
                       for (let arg of args) {
                         console.log(arg);
                       }
                     }
-                    ```
-                  </section>
-                                    
+                  ```
                 </section>
+                                    
+              </section>
                 
-                <!-- Strings  --> 
-                <section>                 
-                  <section data-markdown data-transition="fade">
-                    # Strings
-                  </section>
+              <!-- Strings  --> 
+              <section>                 
+                <section data-markdown data-transition="fade">
+                  # Strings
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Adds New Methods to the Library
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Adds New Methods to the Library
+                </section>
                   
-                  <section data-markdown data-transition="fade">
-                    ## .includes()
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## .includes()
+                </section>
 
-                  <section data-markdown data-transition="concave">
-                    ### Es5 
+                <section data-markdown data-transition="concave">
+                  ### Es5 
 
-                    ```
+                  ```
                     var string = 'food';
                     var substring = 'foo';
 
                     console.log(string.indexOf(substring) > -1);
-                    ```
+                  ```
 
-                    ### Es6
+                  ### Es6
 
-                    ```
+                  ```
                     const string = 'food';
                     const substring = 'foo';
 
                     console.log(string.includes(substring)); // true
-                    ```
-                  </section>
+                  ```
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## .repeat()
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## .repeat()
+                </section>
 
-                  <section data-markdown data-transition="concave">
-                    ### Es5
-                    ```
+                <section data-markdown data-transition="concave">
+                  ### Es5
+                  ```
                     function repeat(string, count) {
                       var strings = [];
                       while(strings.length < count) {
@@ -406,137 +402,195 @@
                       }
                       return strings.join('');
                     }
-                    ```
+                  ```
 
-                    ### Es6
+                  ### Es6
 
-                    ```
+                  ```
                     // String.repeat(numberOfRepetitions)
                     'meow'.repeat(3); // 'meowmeowmeow'
-                    ```
-                  </section>
+                  ```
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Template Literals               
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Template Literals               
+                </section>
 
-                  <section data-markdown data-transition="fade">
-                    ## Allows special characters w/o Escaping
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## Allows special characters w/o Escaping
+                </section>
 
-                  <section data-markdown data-transition="concave">
-                    ### Es5
+                <section data-transition="concave">
 
-                    ```
-                    var text = "This string contains \"double quotes\" which are escaped.";
-                    ```
+                  <h3>Es5</h3>
 
-                    ### Es6
+                  <pre><code class="javascript">
+var text = "This string contains \"double quotes\" which are escaped.";
+                  </code></pre>
 
-                    ```
-                    var text = `This string contains "double quotes" which are escaped.`;
-                    ```
-                  </section>
+                  <h3>Es6</h3>
 
-                  <section data-markdown data-transition="fade">
-                    ## String Interpolation
-                  </section>
+                  <pre><code class="javascript">
+var text = `This string contains "double quotes" which are escaped.`;
+                  </code></pre>
 
-                  <section data-markdown data-transition="concave">
-                    ### Es5
+                </section>
 
-                    ```
+                <section data-markdown data-transition="fade">
+                  ## String Interpolation
+                </section>
+
+                <section data-markdown data-transition="concave">
+                  ### Es5
+
+                  ```
                     var name = 'Tiger';
                     var age = 13;
 
                     console.log('My cat is named ' + name
                                + ' and is ' + age + ' years old.');
-                    ```
+                  ```
 
-                    ### Es6
+                  ### Es6
 
-                    ```
+                  ```
                     const name = 'Tiger';
                     const age = 13;
 
                     console.log(`My cat is named ${name} and is ${age} years old.`);
-                    ```
-                  </section>
+                  ```
+                </section>
                   
-                  <section data-markdown data-transition="fade">
-                    ## New Line Preservation
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## New Line Preservation
+                </section>
 
-                  <section data-markdown data-transition="concave">
-                    ### Es5
+                <section data-markdown data-transition="concave">
+                  ### Es5
 
-                    ```
+                  ```
                     var text = (
                       'cat\n' +
                       'dog\n' +
                       'nickelodeon'
                     );
-                    ```
+                  ```
 
-                    ### Es6
+                  ### Es6
 
-                    ```
+                  ```
                     let text = ( `cat
                     dog
                     nickelodeon`
                     );
                     ```
-                  </section>                  
+                </section>                  
+              </section>
+
+              <!-- Promises -->
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Promises
                 </section>
 
-                <!-- Adding Es2015 to your Rails app --> 
-                <section>
-                  <section data-markdown data-transition="fade">
-                    ## Adding ES2015 to Your Rails App
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## A Promise object represents a value that may not be available yet.
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## Allow replacing Callbacks with Promises
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## Makes for more readable Code
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ### Callbacks
+                  ```
+                    func1(function (value1) {
+                      func2(value1, function (value2) {
+                        func3(value2, function (value3) {
+                          func4(value3, function (value4) {
+                            func5(value4, function (value5) {
+                              // Do something with value 5
+                            });
+                          });
+                        });
+                      });
+                    });
+                  ```
+                </section>
+                <section data-markdown data-transition="fade">
+                  ### Promises
+                  ```
+                    func1(value1)
+                      .then(func2)
+                      .then(func3)
+                      .then(func4)
+                      .then(func5, value5 => {
+                        resolve(5+1);// Do something with value 5
+                        reject();
+                      })
+                      .catch(error);
+                  ```
+                </section>
+              </section>
+              
+              <!-- Adding Es2015 to your Rails app --> 
+              <section>
+                <section data-markdown data-transition="fade">
+                  # Adding ES2015
+                  ## to
+                  # Your Rails App
+                </section>
                   
-                  <section data-markdown data-transition="fade">
-                    ## 2 gems are Necessary
-                  </section>
+                <section data-markdown data-transition="fade">
+                  ## 2 gems are Necessary
+                </section>
 
-                  <section data-transition="convex">
-                    <pre><code class="ruby">
-                      #Gemfile
-                      gem "sprockets"
-                      gem "sprockets-es6"
-                    </code></pre>
-                  </section>
+                <section data-transition="convex">
+                  <pre><code class="ruby">
+                    #Gemfile
+                    gem "sprockets"
+                    gem "sprockets-es6"
+                  </code></pre>
+                </section>
 
-                  <section data-markdown data-transition="convex">
-                    #### Add to top of `application.js`                    
-                    ```
+                <section data-markdown data-transition="convex">
+                  #### Add to top of `application.js`                    
+                  ```
                     require 'sprockets/es6'
-                    ```
-                  </section>
-
-                  <section data-markdown data-transition="convex">
-                    ### Install Presets
-                    ```
-                    npm install babel-preset-es2015 --save-dev
-                    ```
-                  </section>
-
-                  <section data-markdown data-transition="convex">
-                    ### Create `.babelrc` config and enable Plugin(s)
-                    ```
-                    echo '{ "presets": ["es2015"] }' > .babelrc
-                    ```
-                  </section>
-                  
-                  <section data-markdown data-transition="fade">
-                    ## Es6 functionality is added to any `.es6` file
-                  </section>
-                  
+                  ```
                 </section>
+
+                <section data-markdown data-transition="convex">
+                  ### Install Presets
+                  ```
+                    npm install babel-preset-es2015 --save-dev
+                  ```
+                </section>
+
+                <section data-markdown data-transition="convex">
+                  ### Create `.babelrc` config and enable Plugin(s)
+                  ```
+                    echo '{ "presets": ["es2015"] }' > .babelrc
+                  ```
+                </section>
+                  
+                <section data-markdown data-transition="fade">
+                  ## Es6 functionality is added to any `.es6` file
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## Instructions From Babel Website
+                  #### ([https://babeljs.io/docs/setup/#rails](https://babeljs.io/docs/setup/#rails))
+                </section>                
+              </section>
                 
-				<section data-markdown data-transition="slide">
-                  ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
-				</section>
+			  <section data-markdown data-transition="slide">
+                ### [ES2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
+			  </section>
 
 			</div>
 
