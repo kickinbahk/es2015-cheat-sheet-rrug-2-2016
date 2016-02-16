@@ -333,6 +333,29 @@
                     }
                     ```
                   </section>
+
+                  <section data-markdown data-transition="convex">
+                    ### for 
+
+                    ```
+                    function logArguments(...args) {
+                      for (var i=0; i < args.length; i++) {
+                        console.log(args[i]);
+                      }
+                    }
+                    ```
+
+                    ### Es6
+
+                    ```
+                    function logArguments(...args) {
+                      for (let arg of args) {
+                        console.log(arg);
+                      }
+                    }
+                    ```
+                  </section>
+                                    
                 </section>
                 
                 <!-- Strings  --> 
