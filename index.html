@@ -625,6 +625,66 @@ var text = `This string contains "double quotes" which are escaped.`;
                     }
                   ```
                 </section>
+
+                <section data-markdown data-transition="fade">
+                  ## To step through values, we need an iterator
+                </section>
+
+                <section data-markdown data-transition="convex">
+                  ```
+                    var it = foo();
+                  ```
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## We have the .next()
+                </section>
+                
+                <section data-markdown data-transition="convex">
+                  ```
+                    var it = foo();
+
+                    console.log(it.next()); // { value:1, done:false }
+                  ```                  
+                </section>
+
+                <section data-markdown data-transition="convex">
+                  ### If we keep interating
+                  ```
+                    console.log(it.next()); // { value:2, done:false }
+                    console.log(it.next()); // { value:3, done:false }
+                    console.log(it.next()); // { value:4, done:false }
+                    console.log(it.next()); // { value:5, done:false }
+                    console.log(it.next()); // { value:undefined, done:true }
+
+                  ```
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## Let's look at a slightly more complex example
+                </section>
+
+                <section data-transition="convex">
+                  <pre><code class="javascript">
+ function *foo(x) {
+   var y = 2 * (yield (x + 1));
+   var z = yield (y / 3);
+ return (x + y + z);
+ }
+
+ var it = foo( 5 );
+
+ // note: not sending anything into next() here
+ console.log( it.next() );       // { value:6, done:false }
+ console.log( it.next( 12 ) );   // { value:8, done:false }
+ console.log( it.next( 13 ) );   // { value:42, done:true }
+                  </code></pre>
+                </section>
+                
+                <section data-markdown data-transition="fade">
+                  ## The Basics Of ES6 Generators
+                  ### [https://davidwalsh.name/es6-generators](https://davidwalsh.name/es6-generators)
+                </section>                
               </section>
               
               <!-- Adding Es2015 to your Rails app --> 
