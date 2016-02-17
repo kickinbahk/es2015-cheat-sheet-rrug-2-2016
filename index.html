@@ -583,7 +583,48 @@ var text = `This string contains "double quotes" which are escaped.`;
                 <section data-markdown data-transition="fade">
                   ## This enables 2-way message passing, to and from the Generator
                 </section>
+
+                <section data-markdown data-transition="convex">
+                  #### (Two different naming conventions)
+                  ```
+                    function *foo() {
+                      // ..
+                    }
+                  ```
+                  
+                  #### or
+
+                  ```
+                    function* foo() {
+                      // ..
+                    }
+                  ```
+                </section>
                 
+                <section data-markdown data-transition="fade">
+                  ## It is just a normal function, with different keywords
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ### `yield` is referred to as a:
+                  ## `yield expression`
+                </section>
+
+                <section data-markdown data-transition="fade">
+                  ## What we send back in is the result of the `yield expression`
+                </section>
+
+                <section data-markdown data-transition="convex">
+                  ```
+                    function *foo() {
+                      yield 1;
+                      yield 2;
+                      yield 3;
+                      yield 4;
+                      yield 5;
+                    }
+                  ```
+                </section>
               </section>
               
               <!-- Adding Es2015 to your Rails app --> 
